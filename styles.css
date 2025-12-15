@@ -1,0 +1,107 @@
+/* Академічний стиль (GitHub Pages, без збірки) */
+:root{
+  --bg:#ffffff;
+  --text:#111827;
+  --muted:#4b5563;
+  --border:#e5e7eb;
+  --surface:#f8fafc;
+  --accent:#1f4e79; /* стриманий університетський синій */
+}
+
+*{box-sizing:border-box}
+html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family: "Georgia", "Times New Roman", serif; line-height:1.55}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:980px; margin:0 auto; padding:0 18px}
+
+/* Верхнє меню */
+.header{
+  border-bottom:1px solid var(--border);
+  background:var(--bg);
+}
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 0;
+}
+.brand{
+  font-weight:700;
+  letter-spacing:.2px;
+  color:var(--text);
+}
+.nav{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.nav a{
+  padding:8px 10px;
+  border-radius:8px;
+  color:var(--muted);
+  border:1px solid transparent;
+}
+.nav a.active{
+  color:var(--text);
+  border-color:var(--border);
+  background:var(--surface);
+}
+
+/* Контент */
+main{padding:22px 0 34px}
+h1{font-size:28px; margin:0 0 10px}
+h2{font-size:18px; margin:18px 0 8px}
+p{margin:0 0 10px}
+.small{color:var(--muted); font-size:14px}
+
+.card{
+  border:1px solid var(--border);
+  background:var(--bg);
+  border-radius:12px;
+  padding:16px;
+  margin:14px 0;
+}
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+@media (max-width:760px){
+  .grid2{grid-template-columns:1fr}
+}
+
+/* Списки і таблиці */
+ul,ol{margin:8px 0 8px 20px}
+li{margin:6px 0}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+th,td{
+  border:1px solid var(--border);
+  padding:10px 12px;
+  vertical-align:top;
+}
+th{
+  background:var(--surface);
+  text-align:left;
+}
+
+/* Підвал */
+footer{
+  border-top:1px solid var(--border);
+  padding:14px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Друк */
+@media print{
+  .header, footer{border:none}
+  .nav{display:none}
+  .card{border:1px solid #000}
+  a{color:#000; text-decoration:none}
+}
